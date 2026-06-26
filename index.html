@@ -2,225 +2,143 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giuliana Martinatti Giorjiani</title>
 
-    <title>Giuliana Martinatti Giorjiani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <canvas id="motion-canvas"></canvas>
+  <header class="site-header">
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#beyond">Beyond the Lab</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-    <header class="site-header">
+    <span class="nav-dot"></span>
+  </header>
 
-        <nav>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#beyond">Beyond the Lab</a>
-            <a href="#cv">CV</a>
-            <a href="#contact">Contact</a>
-        </nav>
+  <main class="hero">
 
-        <span class="nav-dot"></span>
+    <section class="hero-copy">
+      <p class="eyebrow">Vision · Memory · Spatiotemporal Prediction</p>
 
-    </header>
+      <h1>Giuliana Martinatti Giorjiani</h1>
 
-    <main class="hero">
+      <h2>Cognitive Neuroscientist</h2>
 
-        <section class="hero-copy">
+      <p class="intro">
+        I study how the brain predicts, remembers, and represents dynamic visual information,
+        combining behavioral experiments, fMRI, eye tracking, and computational models.
+      </p>
 
-            <p class="eyebrow">
-                Vision · Memory · Spatiotemporal Prediction
-            </p>
+      <a class="scroll-link" href="#research">
+        <span></span>
+        Scroll to explore
+      </a>
+    </section>
 
-            <h1>
-                Giuliana Martinatti Giorjiani
-            </h1>
+    <section class="hero-visual" aria-hidden="true">
+      <canvas id="motion-canvas"></canvas>
+    </section>
 
-            <h2>
-                Cognitive Neuroscientist
-            </h2>
+  </main>
 
-            <p class="intro">
-                I study how the brain predicts, remembers, and represents dynamic visual information,
-                combining behavioral experiments, fMRI, eye tracking, and computational models.
-            </p>
+  <section id="research" class="section research-section">
+    <div class="cards">
 
-            <a class="scroll-link" href="#research">
-                <span></span>
-                Scroll to explore
-            </a>
-
-        </section>
-
-    </main>
-
-    <!-- ================= RESEARCH ================= -->
-
-    <section id="research" class="section research-section">
-
-        <div class="cards">
-
-            <!-- Working Memory -->
-
-            <article class="card">
-
-                <div class="mini-visual visual-memory">
-
-                    <span class="grating"></span>
-
-                </div>
-
-                <h3>Visual Working Memory</h3>
-
-                <p>
-                    How are visual memories represented in early visual cortex?
-                </p>
-
-                <a href="#">→</a>
-
-            </article>
-
-            <!-- Predictive Motion -->
-
-            <article class="card">
-
-                <div class="mini-visual predictive-motion">
-
-                    <span class="tree-card"></span>
-
-                    <span class="motion-dot-card"></span>
-
-                    <span class="predicted-dot-card"></span>
-
-                </div>
-
-                <h3>Predictive Motion</h3>
-
-                <p>
-                    How does the brain keep track of moving objects when they disappear behind occluders?
-                </p>
-
-                <a href="#">→</a>
-
-            </article>
-
-            <!-- Computational Models -->
-
-            <article class="card">
-
-                <div class="mini-visual computational-models">
-
-                    <span class="layer l1"></span>
-                    <span class="layer l2"></span>
-                    <span class="layer l3"></span>
-                    <span class="layer l4"></span>
-                    <span class="layer l5"></span>
-                    <span class="layer l6"></span>
-
-                </div>
-
-                <h3>Computational Models</h3>
-
-                <p>
-                    Using neural networks to understand visual prediction and temporal representations.
-                </p>
-
-                <a href="#">→</a>
-
-            </article>
-
-            <!-- Beyond the Lab -->
-
-            <article class="card">
-
-                <div class="mini-visual beyond-lab">
-
-                    <span class="horizon"></span>
-
-                    <span class="cockpit"></span>
-
-                    <span class="runway"></span>
-
-                </div>
-
-                <h3>Science Beyond the Lab</h3>
-
-                <p>
-                    Bringing neuroscience into the real world through aviation,
-                    technology and exploratory side projects.
-                </p>
-
-                <a href="#">→</a>
-
-            </article>
-
+      <article class="card">
+        <div class="mini-visual visual-memory">
+          <span class="grating"></span>
         </div>
 
-    </section>
+        <h3>Visual Working Memory</h3>
+        <p>How are visual memories represented in early visual cortex?</p>
+        <a href="#">→</a>
+      </article>
 
-    <!-- ================= PUBLICATIONS ================= -->
+      <article class="card">
+        <div class="mini-visual predictive-motion">
+          <span class="tree-card"></span>
+          <span class="motion-dot-card"></span>
+          <span class="predicted-dot-card"></span>
+        </div>
 
-    <section id="publications" class="section">
+        <h3>Predictive Motion</h3>
+        <p>How does the brain keep track of moving objects when they disappear behind occluders?</p>
+        <a href="#">→</a>
+      </article>
 
-        <h2>Publications</h2>
+      <article class="card">
+        <div class="mini-visual computational-models">
+          <span class="layer l1"></span>
+          <span class="layer l2"></span>
+          <span class="layer l3"></span>
+          <span class="layer l4"></span>
+          <span class="layer l5"></span>
+          <span class="layer l6"></span>
+        </div>
 
+        <h3>Computational Models</h3>
+        <p>Using neural networks to understand visual prediction and temporal representations.</p>
+        <a href="#">→</a>
+      </article>
+
+      <article class="card">
+        <div class="mini-visual beyond-lab">
+          <span class="horizon"></span>
+          <span class="cockpit"></span>
+          <span class="runway"></span>
+        </div>
+
+        <h3>Science Beyond the Lab</h3>
         <p>
-            Selected publications and preprints will appear here.
+          Bringing neuroscience into the real world through aviation,
+          technology and exploratory side projects.
         </p>
+        <a href="#">→</a>
+      </article>
 
-    </section>
+    </div>
+  </section>
 
-    <!-- ================= BEYOND ================= -->
+  <section id="publications" class="section">
+    <h2>Publications</h2>
+    <p>Selected publications and preprints will appear here.</p>
+  </section>
 
-    <section id="beyond" class="section">
+  <section id="beyond" class="section">
+    <h2>Science Beyond the Lab</h2>
+    <p>
+      A collection of projects that explore neuroscience outside traditional laboratory settings,
+      including aviation, visualization, outreach and scientific creativity.
+    </p>
+  </section>
 
-        <h2>Science Beyond the Lab</h2>
+  <section id="cv" class="section">
+    <h2>Curriculum Vitae</h2>
+    <p>A downloadable CV will be available here.</p>
+  </section>
 
-        <p>
-            A collection of projects that explore neuroscience outside traditional laboratory settings,
-            including aviation, visualization, outreach and scientific creativity.
-        </p>
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>
+      Ernst Strüngmann Institute for Neuroscience<br>
+      Frankfurt am Main, Germany
+    </p>
+  </section>
 
-    </section>
-
-    <!-- ================= CV ================= -->
-
-    <section id="cv" class="section">
-
-        <h2>Curriculum Vitae</h2>
-
-        <p>
-            A downloadable CV will be available here.
-        </p>
-
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact" class="section">
-
-        <h2>Contact</h2>
-
-        <p>
-            Ernst Strüngmann Institute for Neuroscience<br>
-            Frankfurt am Main, Germany
-        </p>
-
-    </section>
-
-    <script src="js/script.js"></script>
-
+  <script src="js/script.js"></script>
 </body>
 
 </html>
