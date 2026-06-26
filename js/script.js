@@ -7,13 +7,11 @@ let dpr;
 
 function resizeCanvas() {
   dpr = window.devicePixelRatio || 1;
-  width = window.innerWidth;
-  height = window.innerHeight;
+  width = canvas.clientWidth;
+  height = canvas.clientHeight;
 
   canvas.width = width * dpr;
   canvas.height = height * dpr;
-  canvas.style.width = `${width}px`;
-  canvas.style.height = `${height}px`;
 
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
@@ -23,14 +21,14 @@ resizeCanvas();
 
 const startTime = performance.now();
 
-const stars = Array.from({ length: 155 }, () => ({
+const stars = Array.from({ length: 90 }, () => ({
   x: Math.random(),
-  y: Math.random() * 0.8,
-  r: Math.random() * 1.35 + 0.25,
+  y: Math.random(),
+  r: Math.random() * 1.25 + 0.25,
   alpha: Math.random() * 0.42 + 0.07,
   speed: Math.random() * 0.1 + 0.025,
   phase: Math.random() * Math.PI * 2,
-  gold: Math.random() > 0.82
+  gold: Math.random() > 0.84
 }));
 
 function drawStars(t) {
@@ -48,154 +46,129 @@ function drawStars(t) {
   }
 }
 
-function easeInOutCubic(x) {
-  return x < 0.5
-    ? 4 * x * x * x
-    : 1 - Math.pow(-2 * x + 2, 3) / 2;
+function getOrbit() {
+  return {
+    cx: width * 0.52,
+    cy: height * 0.50,
+    r: Math.min(width, height) * 0.32
+  };
 }
 
-function motionPosition(progress) {
-  const startX = width * 0.47;
-  const endX = width * 0.91;
-  const x = startX + (endX - startX) * progress;
+function orbitPosition(angle) {
+  const orbit = getOrbit();
 
-  const baseY = height * 0.38;
-  const arc = Math.sin(progress * Math.PI) * -34;
-  const wobble = Math.sin(progress * Math.PI * 2) * 5;
-
-  return { x, y: baseY + arc + wobble };
+  return {
+    x: orbit.cx + Math.cos(angle) * orbit.r,
+    y: orbit.cy + Math.sin(angle) * orbit.r
+  };
 }
 
-function drawHeroOccluder(x, y, scale) {
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.scale(scale, scale);
-
-  ctx.fillStyle = "rgba(2, 2, 2, 0.94)";
-  ctx.strokeStyle = "rgba(246, 242, 234, 0.22)";
-  ctx.lineWidth = 1;
-
-  ctx.shadowColor = "rgba(0, 0, 0, 0.95)";
-  ctx.shadowBlur = 30;
-
-  ctx.beginPath();
-  ctx.rect(-13, -72, 26, 144);
-  ctx.fill();
-  ctx.stroke();
-
-  ctx.shadowBlur = 0;
-
-  ctx.strokeStyle = "rgba(216, 189, 112, 0.18)";
-  ctx.lineWidth = 1;
-
-  for (let i = -68; i < 72; i += 10) {
-    ctx.beginPath();
-    ctx.moveTo(-13, i);
-    ctx.lineTo(13, i - 26);
-    ctx.stroke();
-  }
-
-  ctx.restore();
+function normalizeAngle(angle) {
+  return ((angle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
 }
 
-function drawHeroMotion(elapsed) {
-  const delay = 0.45;
-  const duration = 3.2;
-  const local = Math.max(0, elapsed - delay);
-  const raw = Math.min(local / duration, 1);
-  const progress = easeInOutCubic(raw);
+function isOccluded(angle) {
+  const a = normalizeAngle(angle);
 
-  const occX = width * 0.64;
-  const occY = height * 0.38;
-  const occScale = Math.min(width, height) / 720;
+  return a > Math.PI * 0.72 && a < Math.PI * 1.50;
+}
 
-  const point = motionPosition(progress);
-
+function drawOrbit() {
   ctx.lineWidth = 1;
 
-  let prev = motionPosition(0);
-  for (let i = 1; i <= 90; i++) {
-    const p = i / 90;
-    const curr = motionPosition(p);
+  for (let i = 0; i < 260; i++) {
+    const a1 = (i / 260) * Math.PI * 2;
+    const a2 = ((i + 1) / 260) * Math.PI * 2;
 
-    const isFuture = p > progress;
-    ctx.setLineDash(isFuture ? [2, 8] : []);
-    ctx.strokeStyle = isFuture
-      ? "rgba(216, 189, 112, 0.20)"
-      : "rgba(246, 242, 234, 0.32)";
+    const p1 = orbitPosition(a1);
+    const p2 = orbitPosition(a2);
+
+    const hidden = isOccluded((a1 + a2) / 2);
+
+    ctx.strokeStyle = hidden
+      ? "rgba(216, 189, 112, 0.055)"
+      : "rgba(246, 242, 234, 0.16)";
+
+    ctx.setLineDash(hidden ? [2, 8] : []);
 
     ctx.beginPath();
-    ctx.moveTo(prev.x, prev.y);
-    ctx.lineTo(curr.x, curr.y);
+    ctx.moveTo(p1.x, p1.y);
+    ctx.lineTo(p2.x, p2.y);
     ctx.stroke();
-
-    prev = curr;
   }
 
   ctx.setLineDash([]);
+}
 
-  drawHeroOccluder(occX, occY, occScale);
+function drawOccluder() {
+  const orbit = getOrbit();
 
-  const blockHalfWidth = 18 * occScale;
-  const blockHalfHeight = 80 * occScale;
+  const x = orbit.cx;
+  const y = orbit.cy + orbit.r * 0.68;
+  const w = orbit.r * 2.25;
+  const h = orbit.r * 0.82;
 
-  const isBlocked =
-    point.x > occX - blockHalfWidth &&
-    point.x < occX + blockHalfWidth &&
-    point.y > occY - blockHalfHeight &&
-    point.y < occY + blockHalfHeight;
+  const gradient = ctx.createRadialGradient(x, y, h * 0.15, x, y, w * 0.55);
+  gradient.addColorStop(0, "rgba(2, 2, 2, 0.96)");
+  gradient.addColorStop(0.65, "rgba(2, 2, 2, 0.72)");
+  gradient.addColorStop(1, "rgba(2, 2, 2, 0)");
 
-  const dotAlpha = isBlocked ? 0.035 : 1;
-
+  ctx.fillStyle = gradient;
   ctx.beginPath();
-  ctx.arc(point.x, point.y, 5.2, 0, Math.PI * 2);
-  ctx.fillStyle = `rgba(246, 242, 234, ${dotAlpha})`;
-  ctx.shadowColor = `rgba(246, 242, 234, ${dotAlpha})`;
-  ctx.shadowBlur = 22;
+  ctx.ellipse(x, y, w * 0.55, h, 0, 0, Math.PI * 2);
   ctx.fill();
-  ctx.shadowBlur = 0;
+}
 
-  if (isBlocked) {
-    const predicted = motionPosition(Math.min(progress + 0.15, 1));
+function drawDot(angle) {
+  const p = orbitPosition(angle);
+  const hidden = isOccluded(angle);
+
+  if (hidden) {
+    const predicted = orbitPosition(angle + 0.42);
 
     ctx.beginPath();
-    ctx.arc(predicted.x, predicted.y, 19, 0, Math.PI * 2);
-    ctx.strokeStyle = "rgba(216, 189, 112, 0.34)";
+    ctx.arc(predicted.x, predicted.y, 17, 0, Math.PI * 2);
+    ctx.strokeStyle = "rgba(216, 189, 112, 0.18)";
     ctx.setLineDash([2, 7]);
     ctx.stroke();
     ctx.setLineDash([]);
 
     ctx.beginPath();
-    ctx.arc(predicted.x, predicted.y, 3.4, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(216, 189, 112, 0.62)";
-    ctx.shadowColor = "rgba(216, 189, 112, 0.55)";
-    ctx.shadowBlur = 18;
+    ctx.arc(predicted.x, predicted.y, 3, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(216, 189, 112, 0.35)";
+    ctx.shadowColor = "rgba(216, 189, 112, 0.45)";
+    ctx.shadowBlur = 14;
     ctx.fill();
     ctx.shadowBlur = 0;
+
+    return;
   }
-
-  if (raw === 1) {
-    const loop = ((elapsed - delay - duration) % 9) / 9;
-    const ghost = motionPosition(easeInOutCubic(loop));
-
-    ctx.beginPath();
-    ctx.arc(ghost.x, ghost.y, 2.4, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(216, 189, 112, 0.28)";
-    ctx.fill();
-  }
-
-  ctx.strokeStyle = "rgba(216, 189, 112, 0.12)";
-  ctx.lineWidth = 1;
 
   ctx.beginPath();
-  ctx.moveTo(width * 0.38, height * 0.56);
-  ctx.quadraticCurveTo(width * 0.68, height * 0.48, width * 0.98, height * 0.56);
-  ctx.stroke();
+  ctx.arc(p.x, p.y, 5.2, 0, Math.PI * 2);
+  ctx.fillStyle = "rgba(246, 242, 234, 1)";
+  ctx.shadowColor = "rgba(246, 242, 234, 0.95)";
+  ctx.shadowBlur = 22;
+  ctx.fill();
+  ctx.shadowBlur = 0;
+}
+
+function drawHeroMotion(elapsed) {
+  const introDelay = 0.6;
+  const speed = 0.72;
+
+  const t = Math.max(0, elapsed - introDelay);
+  const angle = -Math.PI * 0.15 + t * speed;
+
+  drawOrbit();
+  drawDot(angle);
+  drawOccluder();
 }
 
 function animate(now) {
   const elapsed = (now - startTime) / 1000;
 
+  resizeCanvas();
   ctx.clearRect(0, 0, width, height);
 
   drawStars(elapsed);
