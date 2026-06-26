@@ -3,68 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Giuliana Martinatti Giorjiani</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
   <canvas id="motion-canvas"></canvas>
 
-  <main class="hero">
-    <p class="eyebrow">Vision · Memory · Prediction</p>
-    <h1>Giuliana Martinatti Giorjiani</h1>
-    <h2>Computational Neuroscientist</h2>
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="Home">•</a>
 
-    <p class="intro">
-      I study how the brain predicts, remembers, and represents dynamic visual information,
-      combining behavioral experiments, fMRI, eye tracking, and computational models.
-    </p>
-
-    <div class="links">
+    <nav>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#cv">CV</a>
       <a href="#contact">Contact</a>
-      <a href="https://github.com/Gmgiorjiani" target="_blank">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="top" class="hero">
+    <div class="hero-content reveal">
+      <p class="eyebrow">Vision · Memory · Spatiotemporal Prediction</p>
+
+      <h1>
+        Giuliana<br>
+        Martinatti<br>
+        Giorjiani
+      </h1>
+
+      <h2>Cognitive Neuroscientist</h2>
+
+      <p class="intro">
+        I study how the brain predicts, remembers, and represents dynamic visual information,
+        combining behavioral experiments, fMRI, eye tracking, and computational models.
+      </p>
+
+      <a class="scroll-link" href="#research">
+        <span>↓</span>
+        Scroll to explore
+      </a>
     </div>
   </main>
 
   <section id="research" class="section">
-    <h3>Research</h3>
+    <div class="section-heading">
+      <p class="section-number">01</p>
+      <h3>Research</h3>
+    </div>
 
     <div class="cards">
-      <article>
-        <h4>Visual working memory</h4>
-        <p>How does early visual cortex represent information that is no longer in view?</p>
+      <article class="card">
+        <div class="mini-visual memory-visual"></div>
+        <h4>Visual Working Memory</h4>
+        <p>How are visual memories represented in early visual cortex?</p>
       </article>
 
-      <article>
-        <h4>Predictive motion</h4>
-        <p>How does the brain keep track of moving objects when they disappear behind occluders?</p>
+      <article class="card">
+        <div class="mini-visual prediction-visual"></div>
+        <h4>Predictive Motion</h4>
+        <p>How does the brain keep track of moving objects when they disappear?</p>
       </article>
 
-      <article>
-        <h4>Computational models</h4>
+      <article class="card">
+        <div class="mini-visual model-visual"></div>
+        <h4>Computational Models</h4>
         <p>Using neural networks to understand visual prediction and temporal representations.</p>
       </article>
 
-      <article>
-        <h4>Real-world eye tracking</h4>
-        <p>Measuring visual behavior outside the lab.</p>
+      <article class="card">
+        <div class="mini-visual lab-visual"></div>
+        <h4>Science Beyond the Lab</h4>
+        <p>Exploratory projects that bring scientific curiosity into everyday and naturalistic settings.</p>
       </article>
     </div>
   </section>
 
   <section id="publications" class="section">
-    <h3>Publications</h3>
-    <p>
-      Selected publications and preprints will be added here.
-      For now, see my Google Scholar profile.
+    <div class="section-heading">
+      <p class="section-number">02</p>
+      <h3>Publications</h3>
+    </div>
+
+    <p class="section-text">
+      Selected publications and preprints will be added here soon.
+    </p>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-heading">
+      <p class="section-number">03</p>
+      <h3>Projects</h3>
+    </div>
+
+    <p class="section-text">
+      Code, demos, visualizations, and side projects will live here.
+    </p>
+  </section>
+
+  <section id="cv" class="section">
+    <div class="section-heading">
+      <p class="section-number">04</p>
+      <h3>CV</h3>
+    </div>
+
+    <p class="section-text">
+      A downloadable CV will be added here.
     </p>
   </section>
 
   <section id="contact" class="section">
-    <h3>Contact</h3>
-    <p>
+    <div class="section-heading">
+      <p class="section-number">05</p>
+      <h3>Contact</h3>
+    </div>
+
+    <p class="section-text">
       Ernst Strüngmann Institute · Frankfurt am Main, Germany
     </p>
   </section>
