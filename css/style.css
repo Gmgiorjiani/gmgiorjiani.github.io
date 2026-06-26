@@ -1,1 +1,153 @@
-/* Website stylesheet */
+:root {
+  --bg: #050505;
+  --text: #f4f4f4;
+  --muted: #a7a7a7;
+  --line: rgba(255, 255, 255, 0.12);
+  --card: rgba(255, 255, 255, 0.055);
+  --accent: #d7c48a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+#motion-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.45;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 980px;
+  padding: 7rem 6vw;
+}
+
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  margin-bottom: 1.2rem;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-weight: 400;
+  color: var(--muted);
+  margin: 1.4rem 0 0;
+}
+
+.intro {
+  max-width: 720px;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  color: #d8d8d8;
+  margin: 2rem 0 0;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2.5rem;
+}
+
+.links a {
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  transition: 0.2s ease;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 6vw;
+  border-top: 1px solid var(--line);
+}
+
+.section h3 {
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  letter-spacing: -0.05em;
+  margin: 0 0 2rem;
+}
+
+.section > p {
+  color: var(--muted);
+  max-width: 720px;
+  font-size: 1.1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 1.6rem;
+  min-height: 180px;
+  backdrop-filter: blur(16px);
+}
+
+article h4 {
+  font-size: 1.25rem;
+  margin: 0 0 0.8rem;
+}
+
+article p {
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: 5rem 1.4rem;
+  }
+
+  .section {
+    padding: 4rem 1.4rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
