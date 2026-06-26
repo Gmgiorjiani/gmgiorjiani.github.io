@@ -29,11 +29,9 @@ body {
 }
 
 #motion-canvas {
-  position: fixed;
-  inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  display: block;
   pointer-events: none;
 }
 
@@ -82,8 +80,10 @@ body {
 
 .hero {
   min-height: 74vh;
-  display: flex;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  align-items: end;
+  gap: 2rem;
   padding: 0 3.2vw 5.2rem;
 }
 
@@ -93,6 +93,14 @@ body {
   transform: translateY(14px);
   animation: fadeUp 1.25s ease forwards;
   animation-delay: 3.15s;
+}
+
+.hero-visual {
+  height: min(520px, 58vh);
+  align-self: center;
+  opacity: 0;
+  animation: fadeIn 1.1s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .eyebrow {
@@ -190,6 +198,7 @@ h2 {
   box-shadow:
     inset 0 0 80px rgba(216, 189, 112, 0.028),
     0 20px 80px rgba(0,0,0,0.25);
+  transition: transform 220ms ease, border-color 220ms ease;
 }
 
 .card:hover {
@@ -539,7 +548,13 @@ h2 {
 
   .hero {
     min-height: 78vh;
-    padding: 0 1.35rem 4rem;
+    grid-template-columns: 1fr;
+    padding: 7rem 1.35rem 4rem;
+  }
+
+  .hero-visual {
+    order: -1;
+    height: 260px;
   }
 
   h1 {
