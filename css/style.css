@@ -678,7 +678,7 @@ h2 {
 .publication-list,
 .presentation-list {
   display: grid;
-  gap: 2rem; /* double spacing between items */
+  gap: 0.9rem;          /* spacing between publications */
 }
 
 .publication,
@@ -686,60 +686,55 @@ h2 {
   padding: 0;
   border: none;
   background: transparent;
-  max-width: 980px;
+  max-width: 1100px;
 }
 
-.publication p,
-.presentation p {
-  margin: 0.25rem 0;
+.pub-entry {
+  margin: 0;
   color: var(--muted);
-  line-height: 1.45;
-  font-size: 0.98rem;
+  line-height: 1.55;
+  font-size: 1rem;
 }
 
-.publication h4,
-.presentation h3 {
-  margin: 0.25rem 0;
-  color: var(--text);
-  font-size: 1.05rem;
-  line-height: 1.35;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-}
-
-.pub-year {
-  color: var(--gold) !important;
-  font-size: 0.82rem !important;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-}
-
-.pub-authors strong {
+.pub-entry strong {
   color: var(--text);
   font-weight: 700;
 }
 
-.pub-venue {
+.pub-year {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.pub-entry em {
+  color: var(--muted);
   font-style: italic;
 }
 
-.pub-links,
-.presentation a {
-  margin-top: 0.35rem;
-}
-
-.pub-links a,
-.presentation a,
-.presentation-feature-text a {
+.pub-entry a {
   color: var(--gold);
   text-decoration: none;
-  font-size: 0.92rem;
+  margin-left: .35rem;
 }
 
-.pub-links a:hover,
-.presentation a:hover,
-.presentation-feature-text a:hover {
+.pub-entry a:hover {
   text-decoration: underline;
+}
+
+/* ---------- Talks / Posters ---------- */
+
+.presentation p{
+  margin:.2rem 0;
+  line-height:1.45;
+}
+
+.presentation a{
+  color:var(--gold);
+  text-decoration:none;
+}
+
+.presentation a:hover{
+  text-decoration:underline;
 }
 
 /* Featured talk */
