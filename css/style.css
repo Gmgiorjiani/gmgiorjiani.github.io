@@ -664,6 +664,26 @@ h2 {
   }
 }
 
+/* ==========================================================
+   Research introduction
+   ========================================================== */
+
+.research-section h2 {
+  margin-bottom: 1.8rem;
+}
+
+.research-intro {
+  max-width: 1000px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  line-height: 1.75;
+  margin: 0 0 1.2rem;
+}
+
+.research-section .cards {
+  margin-top: 3rem;
+}
+
 /* Publications + presentations compact style */
 
 .publications-section h3,
