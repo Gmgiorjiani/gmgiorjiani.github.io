@@ -821,13 +821,16 @@ h2 {
   display: grid;
   grid-template-columns: repeat(4, minmax(230px, 1fr));
   gap: 2.2rem;
-  padding: 4.2rem 0 2rem;
+  padding: 5.4rem 0 2rem;   /* more top space for years */
   margin: 2rem 0 5rem;
+  overflow: visible;         /* prevents year labels from being cut */
 }
 
 .posters-timeline {
   grid-template-columns: repeat(6, minmax(190px, 1fr));
   overflow-x: auto;
+  overflow-y: visible;       /* key fix */
+  padding-top: 5.4rem;       /* key fix */
   padding-bottom: 2.5rem;
 }
 
@@ -886,7 +889,8 @@ h2 {
   position: relative;
   display: grid;
   gap: 1.4rem;
-  padding-left: 1.6rem;
+  padding-left: 1.9rem;
+  margin-left: 0.7rem;       /* moves the mini timeline inward */
   border-left: 1px solid rgba(216,189,112,0.55);
 }
 
@@ -897,7 +901,7 @@ h2 {
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -1.95rem;
+  left: -2.18rem;
   top: 0.35rem;
   width: 9px;
   height: 9px;
