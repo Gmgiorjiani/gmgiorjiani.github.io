@@ -98,9 +98,28 @@ body {
 .hero-visual {
   height: min(520px, 58vh);
   align-self: center;
-  opacity: 0;
-  animation: fadeIn 1.1s ease forwards;
-  animation-delay: 0.2s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  opacity: 1;
+  animation: none;
+}
+
+.hero-brain-image {
+  position: static;
+  width: min(86%, 520px);
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+
+  filter:
+    drop-shadow(0 0 22px rgba(216, 189, 112, 0.12))
+    drop-shadow(0 0 28px rgba(0, 70, 170, 0.14));
 }
 
 .eyebrow {
@@ -1076,45 +1095,4 @@ h2 {
   .map-card iframe {
     min-height: 300px;
   }
-}
-
-
-.brain-orbit {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.brain-image {
-    width: min(78%, 560px);
-    max-width: 100%;
-    max-height: 90%;
-
-    object-fit: contain;
-
-    /* No glow, no shadow, no effects */
-    filter: none;
-}
-
-.hero-visual {
-  height: min(520px, 58vh);
-  align-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-}
-
-.hero-brain-image {
-  width: min(86%, 520px);
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-  filter:
-    drop-shadow(0 0 22px rgba(216, 189, 112, 0.12))
-    drop-shadow(0 0 28px rgba(0, 70, 170, 0.14));
 }
