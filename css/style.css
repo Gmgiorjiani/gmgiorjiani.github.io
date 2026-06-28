@@ -1077,3 +1077,41 @@ h2 {
     min-height: 300px;
   }
 }
+
+
+.brain-orbit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.brain-orbit canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+#orbit-back {
+  z-index: 1;
+}
+
+.brain-image {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  width: min(74%, 520px);
+  max-height: 92%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 20px rgba(216, 189, 112, 0.12))
+    drop-shadow(0 0 34px rgba(0, 70, 170, 0.12));
+}
+
+#orbit-front {
+  z-index: 3;
+}
