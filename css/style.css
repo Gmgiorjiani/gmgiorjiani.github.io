@@ -1099,3 +1099,22 @@ h2 {
     /* No glow, no shadow, no effects */
     filter: none;
 }
+
+.hero-visual {
+  height: min(520px, 58vh);
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.hero-brain-image {
+  width: min(86%, 520px);
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  filter:
+    drop-shadow(0 0 22px rgba(216, 189, 112, 0.12))
+    drop-shadow(0 0 28px rgba(0, 70, 170, 0.14));
+}
