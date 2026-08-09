@@ -170,13 +170,9 @@
       <div class="research-introduction">
 
         <p>
-          Our visual experience is remarkably stable despite being inherently incomplete. 
-          Blinks and the disappearance of objects behind obstacles are just two examples of 
-          how sensory information is constantly interrupted. Yet, we perceive the visual world as 
-          continuous: we effortlessly remember what we have just seen, anticipate what we are about 
-          to see, and interact with a dynamic environment with remarkable precision. Such adaptive 
-          behavior relies on internal representations that allow the brain to maintain and transform 
-          visual information beyond what is immediately available to the senses.
+          Our visual experience is inherently rich. Beyond perceiving the world as it is, we remember what 
+          we have just seen and anticipate what we are about to see. This ability to maintain and predict visual information 
+          in the mind allows us to interact with a dynamic environment with remarkable precision.
           </p>
            <p>
           My research investigates the neural mechanisms that support these internal visual representations: 
@@ -275,10 +271,29 @@
           <p>
             How does the visual system keep track of moving objects when they
             temporarily disappear from view?
+            </p>
+          <p>
+          Abstract
+          </p>
+           <p>
 
-            I investigate how the brain continuously updates representations
-            of moving objects during visual occlusion and how these predictions
-            are represented across the visual system.
+            Intercepting or avoiding collision with moving objects, such as while driving or playing sports, requires 
+             anticipating how object positions change across time and space. This ability is particularly advantageous when 
+             objects are temporarily occluded from view, for example when estimating the position of a cyclist passing behind 
+             a parked vehicle. How do we predict the location of a moving object that is no longer visible? Different hypotheses 
+             share the assumption that information encoded during the visible portion of an object’s trajectory is used to estimate 
+             its position, or time to reappearance, in the absence of visual input. In the brain, visual cortex has been shown to 
+             represent information about anticipated visual events and to preserve motion-related features during occlusion (e.g. 
+             motion direction). However, it remains unclear whether visual cortex continuously updates the representation of an object’s 
+             location during multiple seconds of occlusion. Here, we used fMRI to test whether visual cortex supports sustained spatial 
+             tracking during occluded motion and whether such representations are modulated by attention. Participants viewed a target moving 
+             along a circular trajectory under one of three conditions: They had to discriminate the location of the target while the 
+             trajectory was (1) fully visible, (2) half-occluded, or (3) they performed a task at fixation while the target trajectory was half-occluded. 
+             We found that representations of the occluded object’s location were continuously updated in visual cortex throughout occlusion periods 
+             lasting up to four seconds. Diverting attention away from the moving stimulus attenuated, but did not eliminate, these spatial representations. 
+             Moreover, the strength of early visual cortex representations predicted behavioral uncertainty when estimating object location under occlusion. 
+             Together, these findings support a largely automatic tracking account of motion extrapolation, demonstrating that visual cortex dynamically 
+             updates spatial information about attended and unattended objects that are temporarily out of sight.
           </p>
 
         </div>
@@ -313,10 +328,23 @@
           <p>
             How does the nature of a motion signal affect the precision with
             which it is remembered?
-
-            This work examines differences between object motion and texture
-            motion and what these differences reveal about visual representations
-            in memory.
+            </p>
+          <p>
+          Abstract
+          </p>
+          Our daily visual environment is abound with motion. Accurately perceiving object speed is essential when avoiding collisions 
+          or intercepting moving objects. Accurately remembering object speed is equally essential, as moving objects may become temporarily 
+          occluded. Most studies of speed use texture motion stimuli (e.g., dot motion) which minimize spatial cues, but do not reflect the 
+          natural spatiotemporal dynamics of moving objects. In contrast, object motion contains rich spatial cues, better capturing real-world 
+          motion. Neural mechanisms underlying texture and object motion processing differ across the visual hierarchy. Might memory for speed 
+          also differ between texture and object motion? To explore this question, we tested human participants on speed recall for both texture and 
+          object motion stimuli across different speeds (2–32 º/s) and delays (1–8 s). Both types of target stimuli moved along a circular trajectory 
+          (for 4–6 s) and were recalled via method-of-adjustment. Replicating previous work, we found a strong decrease in speed recall performance 
+          with increasing target speed. Importantly, we also observed that recall was significantly worse for texture compared to object motion stimuli, 
+          implying an advantage for spatiotemporally bound objects. For object motion, longer target and delay durations led to better and worse speed 
+          recall, respectively. Gaze was subtly biased toward the location of the object moving along its trajectory. For both types of stimuli, responses 
+          were biased toward the recall probe, and congruency between target and probe direction improved speed recall. Together, our findings provide a solid 
+          psychophysical basis for understanding human short-term memory for speed.
           </p>
 
         </div>
@@ -349,10 +377,24 @@
           </h3>
 
           <p>
-            I use artificial neural networks to investigate which computational
-            mechanisms can generate predictions of dynamic visual information,
-            comparing feedforward, recurrent, and feedback architectures with
-            human behavior.
+          What are computational mechanisms underlying spatiotemporal prediction in the visual system?
+          </p>
+          <p>
+          Abstract
+          </p>
+          Estimating the location of a moving object during occlusion requires the brain to make predictions in absence of corresponding sensory input. 
+          Behavioral studies consistently report that the longer an object remains hidden, the greater is the uncertainty in estimating the object’s location. 
+          However, the computational mechanisms underlying this temporal decay remain unclear. Predictive coding theory proposes that higher-level brain regions 
+          generate predictions that propagate to early sensory areas via feedback, where they are compared against incoming input. However, predictive signals can 
+          be observed in the early visual cortex even when attention is diverted away from a target, or when subjects are anesthetized. This raises the question 
+          whether feedback from higher-level areas is necessary, or whether local recurrent circuits could facilitate spatiotemporal predictions. To test this, 
+          we trained three convolutional neural network architectures on a video-frame prediction task. The networks differed in the pathways through which information 
+          flowed within the different layers, simulating feedforward, recurrent, and feedback processes. We then compared human and model performance on a task where a 
+          single dot was rotating around a half-occluded circular trajectory. In humans, the precision with which the dot was located decayed with increasing occlusion 
+          duration, replicating previous findings. Location estimates led the true position early during occlusion, and lagged behind later, indicating a bias in responses. A
+          ll network architectures also exhibited decay when predicting frames autoregressively, with feedforward models declining most steeply, followed by recurrent 
+          and feedback models. The recurrent model most closely mirrored the decay observed in humans. These findings suggest that local recurrent dynamics may play a role 
+          in sustaining spatiotemporal predictions over perceptual gaps.
           </p>
 
         </div>
