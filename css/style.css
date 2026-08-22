@@ -34,11 +34,10 @@ body {
     var(--bg);
 
   color: var(--text);
-
   font-family: "Inter", system-ui, sans-serif;
-
   overflow-x: hidden;
 }
+
 
 /* ==========================================================
    TOP NAVIGATION
@@ -46,7 +45,6 @@ body {
 
 .site-header {
   width: 100%;
-
   position: relative;
   z-index: 20;
 
@@ -57,7 +55,6 @@ body {
   padding: 1.7rem 3vw 1rem;
 
   opacity: 1;
-
   animation: none;
 }
 
@@ -67,13 +64,11 @@ body {
   justify-content: center;
 
   gap: 2.1rem;
-
   flex-wrap: wrap;
 }
 
 .site-header a {
   color: rgba(246, 242, 234, 0.9);
-
   text-decoration: none;
 
   font-size: 0.95rem;
@@ -93,12 +88,12 @@ body {
   margin-left: 1.7rem;
 
   border-radius: 999px;
-
   background: var(--text);
 
   box-shadow:
     0 0 18px rgba(216, 189, 112, 0.9);
 }
+
 
 /* ==========================================================
    GENERAL LAYOUT
@@ -107,18 +102,12 @@ body {
 .hero,
 .section {
   position: relative;
-
   z-index: 1;
 }
 
 .section {
-  width: min(
-    1370px,
-    calc(100% - 6vw)
-  );
-
+  width: min(1370px, calc(100% - 6vw));
   margin: 0 auto;
-
   padding: 4.5rem 0 6rem;
 }
 
@@ -127,41 +116,29 @@ body {
 
   color: var(--text);
 
-  font-size: clamp(
-    2.2rem,
-    4vw,
-    4rem
-  );
-
+  font-size: clamp(2.2rem, 4vw, 4rem);
   font-weight: 300;
-
   letter-spacing: -0.06em;
 }
 
 .section > p {
   color: var(--muted);
-
   max-width: 720px;
-
   line-height: 1.7;
 }
+
 
 /* ==========================================================
    HERO / ABOUT ME
    ========================================================== */
 
 .hero {
-  width: min(
-    1050px,
-    calc(100% - 6vw)
-  );
+  width: min(1050px, calc(100% - 6vw));
 
   margin: 0 auto;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
 
   padding: 1.3rem 0 6rem;
@@ -169,11 +146,10 @@ body {
   text-align: center;
 
   opacity: 1;
-
   transform: none;
-
   animation: none;
 }
+
 
 /* ---------- Keywords ---------- */
 
@@ -183,32 +159,56 @@ body {
   color: var(--gold);
 
   text-transform: uppercase;
-
   letter-spacing: 0.32em;
 
   font-size: 0.7rem;
-
   font-weight: 700;
 
   text-align: center;
 }
+
+
+/* ==========================================================
+   HERO BANNER
+   ========================================================== */
+
+.hero-banner {
+  width: 100%;
+
+  height: clamp(160px, 21vw, 260px);
+
+  margin: 0 0 2.5rem;
+
+  overflow: hidden;
+
+  /* intentionally no frame */
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: none;
+  box-shadow: none;
+}
+
 
 /* ==========================================================
    FLIPPING PROFILE IMAGE
    ========================================================== */
 
 .profile-flip {
-  width: clamp(
-    7rem,
-    9vw,
-    9rem
-  );
-
-  height: clamp(
-    7rem,
-    9vw,
-    9rem
-  );
+  width: clamp(7rem, 9vw, 9rem);
+  height: clamp(7rem, 9vw, 9rem);
 
   margin-bottom: 1.8rem;
 
@@ -232,7 +232,6 @@ body {
 
 .profile-face {
   position: absolute;
-
   inset: 0;
 
   overflow: hidden;
@@ -244,53 +243,43 @@ body {
   border-radius: 50%;
 
   backface-visibility: hidden;
-
   -webkit-backface-visibility: hidden;
 
   box-shadow:
-    0 0 26px
-    rgba(216, 189, 112, 0.24),
-
-    0 12px 40px
-    rgba(0, 0, 0, 0.5);
+    0 0 26px rgba(216, 189, 112, 0.24),
+    0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 .profile-face img {
   width: 100%;
-
   height: 100%;
 
   display: block;
-
   object-fit: cover;
 }
 
 .profile-back {
-  transform:
-    rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 @keyframes profileFlip {
 
   0%,
   38% {
-    transform:
-      rotateY(0deg);
+    transform: rotateY(0deg);
   }
 
   48%,
   88% {
-    transform:
-      rotateY(180deg);
+    transform: rotateY(180deg);
   }
 
   98%,
   100% {
-    transform:
-      rotateY(360deg);
+    transform: rotateY(360deg);
   }
-
 }
+
 
 /* ==========================================================
    NAME + ABOUT ME
@@ -301,23 +290,16 @@ body {
 
   color: var(--text);
 
-  font-size: clamp(
-    2.2rem,
-    4vw,
-    4rem
-  );
-
+  font-size: clamp(2.2rem, 4vw, 4rem);
   line-height: 1.04;
 
   letter-spacing: -0.065em;
-
   font-weight: 300;
 
   text-align: center;
 
   text-shadow:
-    0 0 26px
-    rgba(255, 255, 255, 0.10);
+    0 0 26px rgba(255, 255, 255, 0.10);
 }
 
 .hero h2 {
@@ -325,12 +307,7 @@ body {
 
   color: var(--gold);
 
-  font-size: clamp(
-    1rem,
-    1.4vw,
-    1.25rem
-  );
-
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
   font-weight: 400;
 
   letter-spacing: 0.02em;
@@ -338,37 +315,25 @@ body {
   text-align: center;
 }
 
+
 /* ==========================================================
    BIO TEXT
    ========================================================== */
 
 .bio-text {
-  width: min(
-    850px,
-    100%
-  );
-
+  width: min(850px, 100%);
   margin: 2.8rem auto 0;
-
   text-align: left;
 }
 
 .intro {
   max-width: none;
 
-  margin:
-    0
-    0
-    1.7rem;
+  margin: 0 0 1.7rem;
 
   color: var(--muted);
 
-  font-size: clamp(
-    0.94rem,
-    1vw,
-    1.05rem
-  );
-
+  font-size: clamp(0.94rem, 1vw, 1.05rem);
   line-height: 1.55;
 
   font-weight: 350;
@@ -390,10 +355,9 @@ body {
 
 .intro a:hover {
   color: #f2dd97;
-
-  border-bottom-color:
-    var(--gold);
+  border-bottom-color: var(--gold);
 }
+
 
 /* ==========================================================
    SCROLL INDICATOR
@@ -401,7 +365,6 @@ body {
 
 .scroll-link {
   display: inline-flex;
-
   align-items: center;
 
   gap: 1rem;
@@ -421,7 +384,6 @@ body {
   display: inline-block;
 
   width: 1px;
-
   height: 44px;
 
   background:
@@ -438,11 +400,9 @@ body {
   position: absolute;
 
   bottom: -3px;
-
   left: -3px;
 
   width: 7px;
-
   height: 7px;
 
   background: var(--text);
@@ -450,9 +410,9 @@ body {
   border-radius: 999px;
 
   box-shadow:
-    0 0 16px
-    var(--gold);
+    0 0 16px var(--gold);
 }
+
 
 /* ==========================================================
    RESEARCH
@@ -461,6 +421,7 @@ body {
 .research-section {
   padding-top: 5rem;
 }
+
 
 /* ---------- Research intro ---------- */
 
@@ -471,11 +432,7 @@ body {
     minmax(0, 1fr)
     minmax(320px, 0.9fr);
 
-  gap: clamp(
-    3rem,
-    7vw,
-    7rem
-  );
+  gap: clamp(3rem, 7vw, 7rem);
 
   align-items: center;
 
@@ -487,19 +444,11 @@ body {
 }
 
 .research-introduction p {
-  margin:
-    0
-    0
-    1.25rem;
+  margin: 0 0 1.25rem;
 
   color: var(--muted);
 
-  font-size: clamp(
-    1rem,
-    1.15vw,
-    1.18rem
-  );
-
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
   line-height: 1.7;
 }
 
@@ -507,17 +456,25 @@ body {
   margin-bottom: 0;
 }
 
+
 /* ---------- Research intro image ---------- */
+
 .research-intro-image {
   min-height: 320px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 0;
+
   overflow: hidden;
+
   border: none;
   border-radius: 0;
+
   background: transparent;
+
   box-shadow: none;
 }
 
@@ -525,12 +482,17 @@ body {
   width: 100%;
   max-width: 600px;
   max-height: 420px;
+
   display: block;
+
   object-fit: contain;
+
   border: none;
   border-radius: 0;
+
   box-shadow: none;
 }
+
 
 /* ---------- Research projects ---------- */
 
@@ -545,11 +507,7 @@ body {
     minmax(0, 0.95fr)
     minmax(320px, 1.05fr);
 
-  gap: clamp(
-    3rem,
-    7vw,
-    7rem
-  );
+  gap: clamp(3rem, 7vw, 7rem);
 
   align-items: center;
 
@@ -571,34 +529,22 @@ body {
 }
 
 .research-number {
-  margin:
-    0
-    0
-    0.8rem;
+  margin: 0 0 0.8rem;
 
   color: var(--gold);
 
   font-size: 0.72rem;
-
   font-weight: 700;
 
   letter-spacing: 0.2em;
 }
 
 .research-project h3 {
-  margin:
-    0
-    0
-    1.3rem;
+  margin: 0 0 1.3rem;
 
   color: var(--text);
 
-  font-size: clamp(
-    1.8rem,
-    3vw,
-    3rem
-  );
-
+  font-size: clamp(1.8rem, 3vw, 3rem);
   font-weight: 300;
 
   letter-spacing: -0.05em;
@@ -610,21 +556,28 @@ body {
   color: var(--muted);
 
   font-size: 1rem;
-
   line-height: 1.7;
 }
 
+
 /* ---------- Research figures ---------- */
+
 .research-project-image {
   min-height: 320px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 0;
+
   overflow: hidden;
+
   border: none;
   border-radius: 0;
+
   background: transparent;
+
   box-shadow: none;
 }
 
@@ -632,12 +585,17 @@ body {
   width: 100%;
   max-width: 600px;
   max-height: 420px;
+
   display: block;
+
   object-fit: contain;
+
   border: none;
   border-radius: 0;
+
   box-shadow: none;
 }
+
 
 /* ==========================================================
    PUBLICATIONS
@@ -646,24 +604,17 @@ body {
 .publications-section h3,
 .presentations-section h3 {
   margin-top: 3rem;
-
   margin-bottom: 1.4rem;
 
-  font-size: clamp(
-    1.4rem,
-    2vw,
-    2rem
-  );
+  font-size: clamp(1.4rem, 2vw, 2rem);
 
   font-weight: 300;
-
   letter-spacing: -0.04em;
 }
 
 .publication-list,
 .presentation-list {
   display: grid;
-
   gap: 0.9rem;
 }
 
@@ -690,19 +641,16 @@ body {
 
 .pub-entry strong {
   color: var(--text);
-
   font-weight: 700;
 }
 
 .pub-year {
   color: var(--text);
-
   font-weight: 400;
 }
 
 .pub-entry em {
   color: var(--muted);
-
   font-style: italic;
 }
 
@@ -718,25 +666,25 @@ body {
   text-decoration: underline;
 }
 
+
 /* ==========================================================
    TALKS & POSTERS
    ========================================================== */
 
 .presentation p {
   margin: 0.2rem 0;
-
   line-height: 1.45;
 }
 
 .presentation a {
   color: var(--gold);
-
   text-decoration: none;
 }
 
 .presentation a:hover {
   text-decoration: underline;
 }
+
 
 /* ---------- Featured talk ---------- */
 
@@ -751,10 +699,7 @@ body {
 
   align-items: center;
 
-  margin:
-    2.5rem
-    0
-    5rem;
+  margin: 2.5rem 0 5rem;
 }
 
 .presentation-feature-text {
@@ -763,7 +708,6 @@ body {
 
 .presentation-feature-text p {
   color: var(--muted);
-
   line-height: 1.55;
 }
 
@@ -790,13 +734,13 @@ body {
 
 .video-wrap iframe {
   width: 100%;
-
   height: 100%;
 
   display: block;
 
   border: 0;
 }
+
 
 /* ---------- Horizontal timelines ---------- */
 
@@ -810,39 +754,25 @@ body {
   display: grid;
 
   grid-template-columns:
-    repeat(
-      4,
-      minmax(230px, 1fr)
-    );
+    repeat(4, minmax(230px, 1fr));
 
   gap: 2.2rem;
 
-  padding:
-    5.4rem
-    0
-    2rem;
+  padding: 5.4rem 0 2rem;
 
-  margin:
-    2rem
-    0
-    5rem;
+  margin: 2rem 0 5rem;
 
   overflow: visible;
 }
 
 .posters-timeline {
   grid-template-columns:
-    repeat(
-      6,
-      minmax(190px, 1fr)
-    );
+    repeat(6, minmax(190px, 1fr));
 
   overflow-x: auto;
-
   overflow-y: visible;
 
   padding-top: 5.4rem;
-
   padding-bottom: 2.5rem;
 }
 
@@ -852,7 +782,6 @@ body {
   top: 2.05rem;
 
   left: 0;
-
   right: 0;
 
   height: 2px;
@@ -872,11 +801,9 @@ body {
   position: absolute;
 
   right: -2px;
-
   top: -5px;
 
   width: 0;
-
   height: 0;
 
   border-left:
@@ -894,7 +821,6 @@ body {
 
 .timeline-year {
   position: relative;
-
   min-width: 0;
 }
 
@@ -902,15 +828,12 @@ body {
   position: absolute;
 
   top: -2.72rem;
-
   left: 50%;
 
   width: 22px;
-
   height: 22px;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
   border:
     3px solid
@@ -931,18 +854,15 @@ body {
   position: absolute;
 
   top: -4.8rem;
-
   left: 50%;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
   margin: 0;
 
   color: var(--gold);
 
   font-size: 1.2rem;
-
   font-weight: 500;
 }
 
@@ -972,11 +892,9 @@ body {
   position: absolute;
 
   left: -2.18rem;
-
   top: 0.35rem;
 
   width: 9px;
-
   height: 9px;
 
   border-radius: 50%;
@@ -989,15 +907,11 @@ body {
 }
 
 .timeline-item h5 {
-  margin:
-    0
-    0
-    0.35rem;
+  margin: 0 0 0.35rem;
 
   color: var(--text);
 
   font-size: 0.98rem;
-
   line-height: 1.35;
 
   font-weight: 400;
@@ -1009,7 +923,6 @@ body {
   color: var(--muted);
 
   font-size: 0.88rem;
-
   line-height: 1.55;
 }
 
@@ -1018,7 +931,6 @@ body {
   display: inline-block;
 
   margin-top: 0.35rem;
-
   margin-right: 0.75rem;
 
   color: var(--gold);
@@ -1031,6 +943,7 @@ body {
 .timeline-item a:hover {
   text-decoration: underline;
 }
+
 
 /* ==========================================================
    SCIENCE BEYOND THE LAB
@@ -1052,7 +965,6 @@ body {
 
 .field-notes {
   display: grid;
-
   gap: 2rem;
 }
 
@@ -1085,7 +997,6 @@ body {
 
 .field-media {
   display: grid;
-
   place-items: center;
 
   min-height: 230px;
@@ -1104,9 +1015,7 @@ body {
 
 .field-media img {
   width: 100%;
-
   max-width: 360px;
-
   max-height: 260px;
 
   display: block;
@@ -1116,10 +1025,7 @@ body {
 
 .image-pair {
   grid-template-columns:
-    repeat(
-      2,
-      minmax(0, 1fr)
-    );
+    repeat(2, minmax(0, 1fr));
 
   gap: 0.6rem;
 
@@ -1131,10 +1037,7 @@ body {
 }
 
 .field-label {
-  margin:
-    0
-    0
-    0.8rem;
+  margin: 0 0 0.8rem;
 
   color: var(--gold);
 
@@ -1143,23 +1046,15 @@ body {
   letter-spacing: 0.24em;
 
   font-size: 0.68rem;
-
   font-weight: 700;
 }
 
 .field-text h3 {
-  margin:
-    0
-    0
-    1rem;
+  margin: 0 0 1rem;
 
   color: var(--text);
 
-  font-size: clamp(
-    1.5rem,
-    2.4vw,
-    2.3rem
-  );
+  font-size: clamp(1.5rem, 2.4vw, 2.3rem);
 
   font-weight: 300;
 
@@ -1168,7 +1063,6 @@ body {
 
 .field-text p {
   color: var(--muted);
-
   line-height: 1.7;
 }
 
@@ -1188,6 +1082,7 @@ body {
   border-bottom-color:
     var(--gold);
 }
+
 
 /* ==========================================================
    CONTACT
@@ -1215,7 +1110,6 @@ body {
 
 .contact-line {
   width: 70px;
-
   height: 2px;
 
   margin-bottom: 2.4rem;
@@ -1234,9 +1128,7 @@ body {
 
   align-items: start;
 
-  padding:
-    1.6rem
-    0;
+  padding: 1.6rem 0;
 
   border-bottom:
     1px solid
@@ -1251,7 +1143,6 @@ body {
   color: var(--gold);
 
   font-size: 1.75rem;
-
   line-height: 1;
 }
 
@@ -1261,11 +1152,7 @@ body {
 
   color: var(--muted);
 
-  font-size: clamp(
-    1.05rem,
-    1.45vw,
-    1.35rem
-  );
+  font-size: clamp(1.05rem, 1.45vw, 1.35rem);
 
   line-height: 1.55;
 
@@ -1302,7 +1189,6 @@ body {
 
 .map-card iframe {
   width: 100%;
-
   height: 100%;
 
   min-height: 360px;
@@ -1322,12 +1208,9 @@ body {
   position: absolute;
 
   right: 1.2rem;
-
   bottom: 1rem;
 
-  padding:
-    0.5rem
-    0.75rem;
+  padding: 0.5rem 0.75rem;
 
   color: var(--gold);
 
@@ -1340,13 +1223,13 @@ body {
   background:
     rgba(2, 2, 2, 0.68);
 
-  backdrop-filter:
-    blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .map-link:hover {
   text-decoration: underline;
 }
+
 
 /* ==========================================================
    RESPONSIVE
@@ -1362,15 +1245,13 @@ body {
     overflow-x: auto;
 
     grid-template-columns:
-      repeat(
-        4,
-        minmax(260px, 1fr)
-      );
+      repeat(4, minmax(260px, 1fr));
 
     padding-right: 2rem;
   }
 
 }
+
 
 @media (max-width: 900px) {
 
@@ -1384,6 +1265,7 @@ body {
   }
 
 }
+
 
 @media (max-width: 820px) {
 
@@ -1421,6 +1303,7 @@ body {
 
 }
 
+
 @media (max-width: 760px) {
 
   .site-header {
@@ -1436,7 +1319,6 @@ body {
 
   .site-header a {
     font-size: 0.8rem;
-
     white-space: nowrap;
   }
 
@@ -1445,11 +1327,9 @@ body {
   }
 
   .hero {
-    width:
-      calc(100% - 2.4rem);
+    width: calc(100% - 2.4rem);
 
     padding-top: 1.5rem;
-
     padding-bottom: 4rem;
   }
 
@@ -1459,6 +1339,15 @@ body {
     letter-spacing: 0.2em;
 
     line-height: 1.7;
+
+    margin-bottom: 1.5rem;
+  }
+
+  /* HERO BANNER ON MOBILE */
+  .hero-banner {
+    height: 150px;
+
+    margin-bottom: 2rem;
   }
 
   .hero h1 {
@@ -1476,8 +1365,7 @@ body {
   }
 
   .section {
-    width:
-      calc(100% - 2.4rem);
+    width: calc(100% - 2.4rem);
   }
 
   .image-pair {
@@ -1485,6 +1373,7 @@ body {
   }
 
 }
+
 
 /* ==========================================================
    REDUCED MOTION
