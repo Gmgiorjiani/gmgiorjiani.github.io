@@ -284,7 +284,7 @@
 
         <p>
           My research investigates the neural mechanisms that support these internal
-          visual representations. Specifically, how visual information is maintained
+          visual representations. Specifically, I ask how visual information is maintained
           in working memory and modulated by behavioral demands, transformed into predictions
           of future events, and ultimately used to guide behavior. To answer these
           questions, I combine psychophysics, functional magnetic resonance imaging
@@ -320,36 +320,16 @@
           <h3>Visual Working Memory</h3>
 
           <p>
-            Could task requirements reshaped the visual representations we hold in memory?
+            Could task requirements reshape the visual representations we hold in memory?
           </p>
 
           <p>
-            Abstract
-          </p>
-
-          <p>
-            Visual working memory (VWM) allows for temporary storage of relevant information
-            to support adaptive behavior. Prior fMRI studies investigating the mechanisms
-            of passive storage have decoded mnemonic information from activity patterns in
-            the early visual cortex (EVC). Given that stored information is ultimately used
-            to accomplish specific tasks, might differences in recall requirements lead to
-            differences in EVC involvement? Here, we manipulated recall requirements during
-            an orientation memory task to investigate how adaptive behavior impacts EVC
-            representations. Specifically, we used four recall conditions to dissociate
-            the roles of visual input, motor output, and online monitoring. To report a
-            remembered orientation, participants (1) used “interactive” button presses to
-            rotate a thin dial on the screen, (2) viewed a “matched replay” of a pre-recorded
-            response and indicated a clockwise or counter-clockwise offset of the final dial
-            orientation, (3) viewed a “mismatched replay”, i.e. a pre-recorded response to a
-            random orientation, and pressed a button if and when the dial crossed the
-            remembered orientation, and (4) used button presses to rotate an “invisible dial”
-            whose initial orientation was shown only briefly before response onset. We
-            uncovered a drastic increase in memory decoding during recall when the remembered
-            orientation matched the final dial orientation (“interactive” and “matched replay”
-            conditions). This implies that visual input alone, motor output alone, or online
-            monitoring alone cannot account for high memory decoding in EVC during recall.
-            Instead, our findings suggest amplified information in EVC when mnemonic contents
-            match sensory input during recall.
+            Visual working memory allows us to temporarily maintain information that is no longer available to the eyes. 
+            In this study, we asked whether recall requirements shapes how mnemonic information is represented
+            in early visual cortex during recall. By separating the contributions of visual input, motor responses, 
+            and online monitoring, we found that memory-related information was strongest when remembered content 
+            matched concurrent sensory input. These findings suggest that visual working memory representations in 
+            early visual cortex are dynamically shaped by the demands of recall.
           </p>
 
         </div>
@@ -383,30 +363,12 @@
           </p>
 
           <p>
-            Abstract
-          </p>
-
-          <p>
-            Intercepting or avoiding collision with moving objects, such as while driving
-            or playing sports, requires anticipating how object positions change across
-            time and space. This ability is particularly advantageous when objects are
-            temporarily occluded from view, for example when estimating the position of a
-            cyclist passing behind a parked vehicle. How do we predict the location of a
-            moving object that is no longer visible? Different hypotheses share the
-            assumption that information encoded during the visible portion of an object’s
-            trajectory is used to estimate its position, or time to reappearance, in the
-            absence of visual input. In the brain, visual cortex has been shown to represent
-            information about anticipated visual events and to preserve motion-related
-            features during occlusion. However, it remains unclear whether visual cortex
-            continuously updates the representation of an object’s location during multiple
-            seconds of occlusion. Here, we used fMRI to test whether visual cortex supports
-            sustained spatial tracking during occluded motion and whether such representations
-            are modulated by attention. We found that representations of the occluded object’s
-            location were continuously updated in visual cortex throughout occlusion periods
-            lasting up to four seconds. Diverting attention away from the moving stimulus
-            attenuated, but did not eliminate, these spatial representations. Moreover,
-            the strength of early visual cortex representations predicted behavioral
-            uncertainty when estimating object location under occlusion.
+            Tracking moving objects requires predicting where they are even when they temporarily disappear from 
+            view. In this study, we asked whether visual cortex continuously updates the location of an object 
+            as it moves behind an occluder. We found that object location was tracked throughout several 
+            seconds of occlusion, even when attention was directed elsewhere. Moreover, stronger representations 
+            in early visual cortex were associated with lower behavioral uncertainty, reflected in faster 
+            responses when estimating the object’s hidden location.
           </p>
 
         </div>
@@ -440,26 +402,13 @@
           </p>
 
           <p>
-            Abstract
-          </p>
-
-          <p>
-            Our daily visual environment is abound with motion. Accurately perceiving
-            object speed is essential when avoiding collisions or intercepting moving
-            objects. Accurately remembering object speed is equally essential, as moving
-            objects may become temporarily occluded. Most studies of speed use texture
-            motion stimuli which minimize spatial cues, but do not reflect the natural
-            spatiotemporal dynamics of moving objects. In contrast, object motion contains
-            rich spatial cues, better capturing real-world motion. Neural mechanisms
-            underlying texture and object motion processing differ across the visual
-            hierarchy. Might memory for speed also differ between texture and object
-            motion? To explore this question, we tested human participants on speed recall
-            for both texture and object motion stimuli across different speeds and delays.
-            We found a strong decrease in speed recall performance with increasing target
-            speed. Importantly, recall was significantly worse for texture compared to
-            object motion stimuli, implying an advantage for spatiotemporally bound objects.
-            Together, our findings provide a psychophysical basis for understanding human
-            short-term memory for speed.
+            Remembering object speed is essential for interacting with moving objects, 
+            particularly when they temporarily disappear from view. In this study, 
+            we compared memory for speed using texture motion and object motion, which contains 
+            richer spatial information. Speed recall became less accurate as target speed increased, 
+            but performance was consistently better for object motion than for texture motion. 
+            These findings suggest that spatially coherent objects provide an advantage for 
+            short-term memory of speed.
           </p>
 
         </div>
@@ -488,7 +437,7 @@
           <h3>Computational Models</h3>
 
           <p>
-            What are computational mechanisms underlying spatiotemporal prediction
+            What are the computational mechanisms underlying spatiotemporal prediction
             in the visual system?
           </p>
 
@@ -497,22 +446,12 @@
           </p>
 
           <p>
-            Estimating the location of a moving object during occlusion requires the brain
-            to make predictions in absence of corresponding sensory input. Behavioral
-            studies consistently report that the longer an object remains hidden, the
-            greater is the uncertainty in estimating the object’s location. However, the
-            computational mechanisms underlying this temporal decay remain unclear.
-            Predictive coding theory proposes that higher-level brain regions generate
-            predictions that propagate to early sensory areas via feedback, where they
-            are compared against incoming input. However, predictive signals can be
-            observed in early visual cortex even when attention is diverted away from a
-            target. This raises the question whether feedback from higher-level areas is
-            necessary, or whether local recurrent circuits could facilitate spatiotemporal
-            predictions. We trained three convolutional neural network architectures
-            differing in feedforward, recurrent, and feedback processing. The recurrent
-            model most closely mirrored the temporal decay observed in humans, suggesting
-            that local recurrent dynamics may contribute to sustaining spatiotemporal
-            predictions over perceptual gaps.
+            Predicting the location of a moving object during occlusion requires maintaining information in 
+            the absence of sensory input. In this study, we asked which computational mechanisms might 
+            explain the increasing uncertainty that arises as an object remains hidden. We compared feedforward, 
+            recurrent, and feedback neural network architectures and found that the recurrent model most closely 
+            reproduced the temporal decay observed in human behavior. These findings suggest that local recurrent 
+            processing may help sustain spatiotemporal predictions across perceptual gaps.
           </p>
 
         </div>
